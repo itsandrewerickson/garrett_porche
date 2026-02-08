@@ -8,54 +8,59 @@ import Image from "next/image";
 const services = [
   {
     id: "remote",
+    // TODO: Replace with garrett-working-on-911-engine.jpg when available
     image: "/images/stock-diyer.png",
-    title: "Remote Diagnostic",
+    title: "Remote Strategy Session",
     subtitle: "DIY & Enthusiasts",
     price: "From $150",
     description:
-      "Submit your symptoms, fault codes, and data logs. Receive expert analysis with precise fault isolation and repair recommendations.",
+      "Strategic fault isolation and repair roadmaps. Submit your symptoms, fault codes, and data logs. Receive a clear action plan—not guesswork.",
     features: [
-      "Detailed fault analysis",
+      "Strategic fault isolation",
+      "Repair roadmap & parts list",
       "Live data interpretation",
-      "Repair strategy guidance",
       "Follow-up support included",
     ],
     popular: false,
-    cta: "Request Remote Session",
+    cta: "Book Strategy Session",
+    queryParam: "remote",
   },
   {
     id: "consultation",
     image: "/images/hero1.jpg",
-    title: "Live Consultation",
-    subtitle: "Real-Time Support",
-    price: "From $200",
+    title: "Live Video Diagnostics",
+    subtitle: "Real-Time PIWIS Support",
+    price: "From $250",
     description:
-      "Video call session for complex diagnostics. Work through issues together with screen sharing and real-time data analysis.",
+      "Real-time PIWIS and screen sharing support. Work through complex electrical and mechanical faults together with a Master Tech guiding every step.",
     features: [
-      "Live video collaboration",
-      "Real-time screen sharing",
-      "Direct expert guidance",
+      "Live PIWIS/screen sharing",
+      "Real-time fault tracing",
+      "Direct Master Tech guidance",
       "Session recording provided",
     ],
     popular: true,
     cta: "Book Live Session",
+    queryParam: "live",
   },
   {
     id: "shop",
+    // TODO: Replace with porsche-shop-piwis-tester.jpg when available
     image: "/images/stock-mechanic-shop.png",
-    title: "Shop Support",
+    title: "Shop Emergency Support",
     subtitle: "Independent Shops",
     price: "Custom",
     description:
-      "Ongoing diagnostic support for independent repair shops. Like having a remote shop foreman with Porsche master-level expertise.",
+      "Like having a remote shop foreman. Increase your billable hours by solving stuck cars faster. Priority response for your toughest diagnostic challenges.",
     features: [
-      "Priority response times",
+      "Priority emergency response",
       "Team training sessions",
       "Diagnostic strategy support",
       "Monthly consultation calls",
     ],
     popular: false,
-    cta: "Discuss Partnership",
+    cta: "Book Shop Onboarding",
+    queryParam: "shop",
   },
 ];
 
@@ -78,8 +83,8 @@ export function Services() {
             DIAGNOSTIC SERVICES
           </h2>
           <p className="text-[#999999] max-w-2xl">
-            Expert-level Porsche diagnosis tailored to your needs. Whether you&apos;re a
-            DIY enthusiast, independent shop, or dealership seeking a second opinion.
+            Premium Porsche diagnostic support tailored to your needs. From DIY enthusiasts
+            protecting their investment to independent shops increasing their diagnostic capacity.
           </p>
         </motion.div>
 
@@ -143,7 +148,7 @@ export function Services() {
                 <Button
                   variant={service.popular ? "primary" : "secondary"}
                   className="w-full group"
-                  href={`/book?service=${service.id}`}
+                  href={`/book?type=${service.queryParam}`}
                 >
                   {service.cta}
                   <ArrowRight

@@ -11,7 +11,7 @@ export function Header() {
   const navLinks = [
     { href: "#services", label: "Services" },
     { href: "#about", label: "About" },
-    { href: "#testimonials", label: "Testimonials" },
+    { href: "#testimonials", label: "Results" },
     { href: "#contact", label: "Contact" },
   ];
 
@@ -70,8 +70,8 @@ export function Header() {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="primary" size="sm" href="/book">
-              Schedule Consultation
+            <Button variant="primary" size="sm" href="/book?type=header">
+              Book Diagnostic
             </Button>
           </div>
 
@@ -106,8 +106,8 @@ export function Header() {
                   {link.label}
                 </a>
               ))}
-              <Button variant="primary" className="mt-2" href="/book">
-                Schedule Consultation
+              <Button variant="primary" className="mt-2" href="/book?type=mobile-menu">
+                Book Diagnostic
               </Button>
             </nav>
           </motion.div>

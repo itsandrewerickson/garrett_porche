@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Mail, ArrowRight, Check } from "lucide-react";
+import { X, FileText, ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 
@@ -39,7 +39,7 @@ export function ExitIntentModal() {
 
     setStatus("loading");
 
-    // TODO: Integrate with Supabase
+    // TODO: Integrate with email service
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
     setStatus("success");
@@ -88,19 +88,19 @@ export function ExitIntentModal() {
             <div className="text-center">
               {/* Icon */}
               <div className="w-14 h-14 mx-auto mb-6 bg-[#D5001C]/10 flex items-center justify-center border border-[#D5001C]/30">
-                <Mail size={28} className="text-[#D5001C]" />
+                <FileText size={28} className="text-[#D5001C]" />
               </div>
 
               <h3
                 className="text-2xl font-semibold text-[#F5F5F5] mb-2 tracking-tight"
                 style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
               >
-                BEFORE YOU GO
+                WAIT — FREE DOWNLOAD
               </h3>
 
               <p className="text-[#999999] mb-6">
-                Get Porsche technical insights and diagnostic tips delivered
-                to your inbox.
+                Get the <span className="text-[#F5F5F5]">5 Most Common &quot;Unfixable&quot; 991/992 Faults</span> checklist
+                before you go.
               </p>
 
               {status === "success" ? (
@@ -110,7 +110,7 @@ export function ExitIntentModal() {
                   className="flex items-center justify-center gap-2 text-[#2D8653]"
                 >
                   <Check size={20} />
-                  <span>You&apos;re in! Check your inbox.</span>
+                  <span>Check your inbox!</span>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -127,7 +127,7 @@ export function ExitIntentModal() {
                     className="w-full"
                     isLoading={status === "loading"}
                   >
-                    Subscribe
+                    Send Me the Checklist
                     <ArrowRight size={16} className="ml-2" />
                   </Button>
                 </form>

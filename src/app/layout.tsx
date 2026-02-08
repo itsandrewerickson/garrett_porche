@@ -9,30 +9,34 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Griffin Diagnostics | Expert Porsche Diagnostic Services",
+  title: "Griffin Diagnostics | Remote Porsche PIWIS Support & Master Consulting",
   description:
-    "Expert-level Porsche diagnosis for independent shops and DIY enthusiasts. Founded by a Porsche Master-Certified technician with 20+ years experience. Remote and in-person diagnostic sessions.",
+    "Direct access to a Porsche Master Technician. Solve complex electrical and mechanical faults without the dealership runaround. Remote PIWIS support, DME diagnostics, and expert fault isolation.",
   keywords: [
+    "Porsche Master Technician",
+    "PIWIS support",
+    "DME repair",
+    "911 diagnostics",
+    "remote mechanic",
     "Porsche diagnostics",
-    "Porsche diagnosis",
     "Porsche fault isolation",
-    "independent Porsche shop",
-    "Porsche DIY",
-    "Porsche master technician",
-    "remote Porsche diagnostics",
-    "Porsche troubleshooting",
+    "997 diagnostics",
+    "991 diagnostics",
+    "992 diagnostics",
+    "Porsche electrical diagnosis",
+    "Porsche CAN bus",
   ],
   authors: [{ name: "Griffin Diagnostics" }],
   openGraph: {
-    title: "Griffin Diagnostics | Expert Porsche Diagnostic Services",
+    title: "Griffin Diagnostics | Remote Porsche PIWIS Support & Master Consulting",
     description:
-      "Expert-level Porsche diagnosis for independent shops and DIY enthusiasts. 20+ years of Master-Certified experience.",
+      "Direct access to a Porsche Master Technician. Solve complex electrical and mechanical faults without the dealership runaround.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Griffin Diagnostics",
-    description: "Expert Porsche diagnostics from a Master-Certified technician.",
+    title: "Griffin Diagnostics | Porsche Master Consulting",
+    description: "Remote PIWIS support and Master-level Porsche diagnostics on demand.",
   },
 };
 

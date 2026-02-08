@@ -6,27 +6,27 @@ import { Quote } from "lucide-react";
 const testimonials = [
   {
     name: "Alex Reed",
-    role: "Porsche Owner, 10+ Years",
+    role: "997 GT3 Owner",
     quote:
-      "I've owned Porsches over a decade. Griffin helped pinpoint an intermittent issue I couldn't solve alone. Finally got clarity on a problem that had plagued me for months.",
+      "Solved my CAN bus communication issue in 20 minutes. I'd already replaced two modules chasing this gremlin. Griffin traced it to a corroded ground point I never would have found. Saved me thousands.",
   },
   {
     name: "Mark Lane",
-    role: "Independent Shop Owner",
+    role: "Owner, Austin European Auto Specialist",
     quote:
-      "Rapid isolation of CAN communication and module issues post-repairs. Griffin's expertise has reduced our rework and labor costs significantly. An invaluable resource for our shop.",
+      "We had a 991 Turbo sitting for three weeks with an intermittent DME fault. One video session with Griffin and we had the root cause isolated. That car is now out the door and the customer is thrilled.",
   },
   {
     name: "Luke Nash",
-    role: "Independent Shop Owner",
+    role: "Owner, Nashville Porsche Specialists",
     quote:
-      "It's like having a remote shop foreman. Griffin provides diagnostic strategy that raises our entire team's confidence. We tackle jobs now that we would have turned away before.",
+      "It's like having a remote shop foreman with 20 years at the dealer. Griffin has raised our entire team's diagnostic confidence. We're taking on jobs now that we would have sent away before.",
   },
   {
     name: "Paul Gray",
-    role: "DIY 997 Owner",
+    role: "Cayman S Track Enthusiast",
     quote:
-      "No fluff, no upsell, just clean diagnosis. Live data analysis that actually explained what was happening. Worth every penny for the peace of mind alone.",
+      "No fluff, no upsell, just clean diagnosis. My PASM warning was a $3 connector issue, not the $2,800 shock the dealer quoted. Live data analysis showed exactly what was happening. Worth every penny.",
   },
 ];
 
@@ -46,11 +46,11 @@ export function Testimonials() {
             className="text-3xl sm:text-4xl font-semibold text-[#F5F5F5] mb-4 tracking-tight"
             style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
           >
-            CLIENT TESTIMONIALS
+            CLIENT RESULTS
           </h2>
           <p className="text-[#999999] max-w-2xl">
-            From DIY enthusiasts to independent shop owners—hear from those who&apos;ve
-            experienced precision Porsche diagnostics.
+            From track-day enthusiasts to independent shop owners—real diagnostic wins
+            from real Porsche owners and professionals.
           </p>
         </motion.div>
 

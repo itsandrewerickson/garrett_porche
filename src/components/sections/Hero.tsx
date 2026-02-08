@@ -28,18 +28,17 @@ export function Hero() {
             <div className="w-16 h-1 bg-[#D5001C] mb-8" />
 
             <h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-[#F5F5F5] leading-[1.1] mb-6 tracking-tight"
+              className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#F5F5F5] leading-[1.15] mb-6 tracking-tight"
               style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
             >
-              EXPERT PORSCHE
+              STOP THROWING PARTS AT YOUR PORSCHE.
               <br />
-              <span className="text-[#D5001C]">DIAGNOSTICS</span>
+              <span className="text-[#D5001C]">GET MASTER-LEVEL DIAGNOSIS ON DEMAND.</span>
             </h1>
 
             <p className="text-lg text-[#999999] mb-8 max-w-lg leading-relaxed">
-              Precision fault isolation for independent shops and DIY enthusiasts.
-              Founded by a Porsche Master-Certified technician with 20+ years
-              of experience. No guesswork. No unnecessary parts.
+              Direct access to a Porsche Master Technician. Solve complex electrical
+              and mechanical faults without the dealership runaround.
             </p>
 
             {/* Value props - Porsche style cards */}
@@ -47,23 +46,23 @@ export function Hero() {
               <div className="bg-[#141414] border border-[#2A2A2A] p-4">
                 <Target size={20} className="text-[#D5001C] mb-2" />
                 <p className="text-sm font-medium text-[#F5F5F5]">Expert Access</p>
-                <p className="text-xs text-[#666]">Direct specialist communication</p>
+                <p className="text-xs text-[#666]">Direct Master Tech line</p>
               </div>
               <div className="bg-[#141414] border border-[#2A2A2A] p-4">
                 <DollarSign size={20} className="text-[#D5001C] mb-2" />
-                <p className="text-sm font-medium text-[#F5F5F5]">Cost Savings</p>
-                <p className="text-xs text-[#666]">Accurate first-time diagnosis</p>
+                <p className="text-sm font-medium text-[#F5F5F5]">Save Thousands</p>
+                <p className="text-xs text-[#666]">No more guessing parts</p>
               </div>
               <div className="bg-[#141414] border border-[#2A2A2A] p-4">
                 <Clock size={20} className="text-[#D5001C] mb-2" />
-                <p className="text-sm font-medium text-[#F5F5F5]">Less Downtime</p>
-                <p className="text-xs text-[#666]">Faster fault resolution</p>
+                <p className="text-sm font-medium text-[#F5F5F5]">Same Day</p>
+                <p className="text-xs text-[#666]">Answers when you need them</p>
               </div>
             </div>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="primary" size="lg" href="/book">
+              <Button variant="primary" size="lg" href="/book?type=diagnostic">
                 Schedule Diagnostic
               </Button>
               <Button variant="secondary" size="lg" href="#services">
@@ -109,7 +108,7 @@ export function Hero() {
                 <p className="text-2xl font-semibold text-[#F5F5F5]" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
                   20+ Years
                 </p>
-                <p className="text-xs text-[#999999] uppercase tracking-wider">Master Certified</p>
+                <p className="text-xs text-[#999999] uppercase tracking-wider">Porsche Master Tech</p>
               </motion.div>
             </div>
           </motion.div>
