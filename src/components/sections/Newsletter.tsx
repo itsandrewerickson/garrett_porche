@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { Mail, ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
-import { Badge } from "@/components/ui/Badge";
 
 export function Newsletter() {
   const [email, setEmail] = useState("");
@@ -31,7 +30,7 @@ export function Newsletter() {
   };
 
   return (
-    <section className="py-24 bg-[#0F1115] border-t border-[#1A1A1E]">
+    <section className="py-24 bg-[#141414] border-t border-[#2A2A2A]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -39,34 +38,31 @@ export function Newsletter() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <Badge variant="accent" className="mb-4">
-            <Mail size={12} className="mr-1" />
-            The Over-Rev Report
-          </Badge>
+          <div className="w-16 h-1 bg-[#D5001C] mb-6 mx-auto" />
 
-          <h2 className="font-mono text-3xl sm:text-4xl font-bold text-[#EAEAEA] mb-4">
-            Porsche Engineering Deep Dives
+          <h2
+            className="text-3xl sm:text-4xl font-semibold text-[#F5F5F5] mb-4 tracking-tight"
+            style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+          >
+            STAY INFORMED
           </h2>
 
-          <p className="text-[#A0A0A0] mb-8 max-w-2xl mx-auto">
-            Bi-weekly technical insights, common fault analysis, and retrofit
-            guides. Written by a Master Tech for enthusiasts who want to
-            understand their machines.
+          <p className="text-[#999999] mb-8 max-w-2xl mx-auto">
+            Technical insights, common fault analysis, and diagnostic guides.
+            Written for enthusiasts and professionals who want deeper
+            understanding of Porsche systems.
           </p>
 
           {/* Topics Preview */}
           <div className="flex flex-wrap justify-center gap-2 mb-8">
-            <span className="px-3 py-1 bg-[#1A1A1E] rounded-full text-xs text-[#666]">
-              IMS Bearing Reality Check
+            <span className="px-3 py-1 bg-[#1C1C1C] border border-[#2A2A2A] text-xs text-[#666] uppercase tracking-wider">
+              Technical Deep Dives
             </span>
-            <span className="px-3 py-1 bg-[#1A1A1E] rounded-full text-xs text-[#666]">
-              PDK vs Manual Myths
+            <span className="px-3 py-1 bg-[#1C1C1C] border border-[#2A2A2A] text-xs text-[#666] uppercase tracking-wider">
+              Common Faults
             </span>
-            <span className="px-3 py-1 bg-[#1A1A1E] rounded-full text-xs text-[#666]">
-              Cooling System Deep Dive
-            </span>
-            <span className="px-3 py-1 bg-[#1A1A1E] rounded-full text-xs text-[#666]">
-              Retrofit Coding Tips
+            <span className="px-3 py-1 bg-[#1C1C1C] border border-[#2A2A2A] text-xs text-[#666] uppercase tracking-wider">
+              Diagnostic Tips
             </span>
           </div>
 
@@ -106,7 +102,7 @@ export function Newsletter() {
           </form>
 
           <p className="text-xs text-[#666] mt-4">
-            No spam. Unsubscribe anytime. ~2 emails per month.
+            No spam. Unsubscribe anytime.
           </p>
         </motion.div>
       </div>

@@ -1,50 +1,38 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#0F1115",
+  themeColor: "#0A0A0A",
 };
 
 export const metadata: Metadata = {
-  title: "Garrett Porsche Diagnostics | Master Technician Remote Consulting",
+  title: "Griffin Diagnostics | Expert Porsche Diagnostic Services",
   description:
-    "Expert Porsche diagnostics from a Level 3 Master Technician. Get a guaranteed diagnosis within 3 business hours. 17 years experience, Porsche & BMW Master Certified.",
+    "Expert-level Porsche diagnosis for independent shops and DIY enthusiasts. Founded by a Porsche Master-Certified technician with 20+ years experience. Remote and in-person diagnostic sessions.",
   keywords: [
     "Porsche diagnostics",
-    "Porsche mechanic",
-    "remote car diagnostics",
+    "Porsche diagnosis",
+    "Porsche fault isolation",
+    "independent Porsche shop",
+    "Porsche DIY",
     "Porsche master technician",
-    "car noise diagnosis",
-    "Porsche retrofit",
-    "Porsche CarPlay",
+    "remote Porsche diagnostics",
+    "Porsche troubleshooting",
   ],
-  authors: [{ name: "Garrett" }],
+  authors: [{ name: "Griffin Diagnostics" }],
   openGraph: {
-    title: "Garrett Porsche Diagnostics | Master Technician Remote Consulting",
+    title: "Griffin Diagnostics | Expert Porsche Diagnostic Services",
     description:
-      "Expert Porsche diagnostics from a Level 3 Master Technician. Guaranteed diagnosis within 3 business hours.",
+      "Expert-level Porsche diagnosis for independent shops and DIY enthusiasts. 20+ years of Master-Certified experience.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Garrett Porsche Diagnostics",
-    description: "Expert Porsche diagnostics from a Level 3 Master Technician.",
+    title: "Griffin Diagnostics",
+    description: "Expert Porsche diagnostics from a Master-Certified technician.",
   },
 };
 
@@ -55,9 +43,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body
-        className={`${inter.variable} ${jetbrainsMono.variable} antialiased bg-[#0F1115] text-[#EAEAEA]`}
-      >
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800&family=Barlow+Condensed:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="antialiased bg-[#0A0A0A] text-[#F5F5F5]">
         {children}
       </body>
     </html>

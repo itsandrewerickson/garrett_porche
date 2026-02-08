@@ -14,16 +14,16 @@ export function Badge({
   className = "",
 }: BadgeProps) {
   const variants = {
-    default: "bg-[#1A1A1E] text-[#C0C0C0] border-[#2A2A2E]",
-    accent: "bg-[#3461D2]/10 text-[#3461D2] border-[#3461D2]/30",
-    gold: "bg-amber-500/10 text-amber-400 border-amber-500/30",
+    default: "bg-[#1C1C1C] text-[#999999] border-[#2A2A2A]",
+    accent: "bg-[#D5001C]/10 text-[#D5001C] border-[#D5001C]/30",
+    gold: "bg-[#B8A97F]/10 text-[#B8A97F] border-[#B8A97F]/30",
   };
 
   return (
     <motion.span
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
-      className={`inline-flex items-center px-3 py-1 text-xs font-mono font-medium border rounded-full ${variants[variant]} ${className}`}
+      className={`inline-flex items-center px-3 py-1 text-xs font-medium uppercase tracking-wider border ${variants[variant]} ${className}`}
     >
       {children}
     </motion.span>

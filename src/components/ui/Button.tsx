@@ -32,21 +32,21 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseStyles =
-      "inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3461D2] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0F1115] disabled:opacity-50 disabled:cursor-not-allowed";
+      "inline-flex items-center justify-center font-semibold tracking-wide uppercase transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D5001C] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0A0A] disabled:opacity-50 disabled:cursor-not-allowed";
 
     const variants = {
       primary:
-        "bg-[#3461D2] text-white hover:bg-[#4A7AE8] active:bg-[#2A51B2] shadow-lg shadow-[#3461D2]/20",
+        "bg-[#D5001C] text-white hover:bg-[#E31B2E] active:bg-[#B5001A]",
       secondary:
-        "bg-transparent text-[#EAEAEA] border border-[#C0C0C0] hover:border-[#3461D2] hover:text-[#3461D2]",
+        "bg-transparent text-[#F5F5F5] border border-[#2A2A2A] hover:border-[#D5001C] hover:text-[#D5001C]",
       ghost:
-        "bg-transparent text-[#A0A0A0] hover:text-[#EAEAEA] hover:bg-[#1A1A1E]",
+        "bg-transparent text-[#999999] hover:text-[#F5F5F5] hover:bg-[#141414]",
     };
 
     const sizes = {
-      sm: "px-4 py-2 text-sm rounded",
-      md: "px-6 py-3 text-base rounded-md",
-      lg: "px-8 py-4 text-lg rounded-lg",
+      sm: "px-5 py-2.5 text-xs",
+      md: "px-6 py-3 text-sm",
+      lg: "px-8 py-4 text-sm",
     };
 
     const combinedClassName = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`;
@@ -67,8 +67,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         className={combinedClassName}
         disabled={disabled || isLoading}
         onClick={onClick}
-        whileHover={{ scale: disabled ? 1 : 1.02 }}
-        whileTap={{ scale: disabled ? 1 : 0.98 }}
+        whileHover={{ scale: disabled ? 1 : 1.01 }}
+        whileTap={{ scale: disabled ? 1 : 0.99 }}
       >
         {isLoading ? (
           <svg

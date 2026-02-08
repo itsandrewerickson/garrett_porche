@@ -71,12 +71,15 @@ export function ExitIntentModal() {
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="relative bg-[#1A1A1E] border border-[#2A2A2E] rounded-lg p-8 max-w-md w-full shadow-2xl"
+            className="relative bg-[#141414] border border-[#2A2A2A] p-8 max-w-md w-full shadow-2xl"
           >
+            {/* Red accent line */}
+            <div className="absolute top-0 left-0 right-0 h-1 bg-[#D5001C]" />
+
             {/* Close button */}
             <button
               onClick={() => setIsOpen(false)}
-              className="absolute top-4 right-4 p-2 text-[#666] hover:text-[#EAEAEA] transition-colors"
+              className="absolute top-4 right-4 p-2 text-[#666] hover:text-[#F5F5F5] transition-colors"
               aria-label="Close modal"
             >
               <X size={20} />
@@ -84,24 +87,27 @@ export function ExitIntentModal() {
 
             <div className="text-center">
               {/* Icon */}
-              <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[#3461D2]/20 flex items-center justify-center">
-                <Mail size={32} className="text-[#3461D2]" />
+              <div className="w-14 h-14 mx-auto mb-6 bg-[#D5001C]/10 flex items-center justify-center border border-[#D5001C]/30">
+                <Mail size={28} className="text-[#D5001C]" />
               </div>
 
-              <h3 className="font-mono text-2xl font-bold text-[#EAEAEA] mb-2">
-                Before You Go...
+              <h3
+                className="text-2xl font-semibold text-[#F5F5F5] mb-2 tracking-tight"
+                style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+              >
+                BEFORE YOU GO
               </h3>
 
-              <p className="text-[#A0A0A0] mb-6">
-                Get bi-weekly Porsche technical insights delivered to your
-                inbox. Written by a Master Tech.
+              <p className="text-[#999999] mb-6">
+                Get Porsche technical insights and diagnostic tips delivered
+                to your inbox.
               </p>
 
               {status === "success" ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="flex items-center justify-center gap-2 text-[#34D275]"
+                  className="flex items-center justify-center gap-2 text-[#2D8653]"
                 >
                   <Check size={20} />
                   <span>You&apos;re in! Check your inbox.</span>
@@ -121,7 +127,7 @@ export function ExitIntentModal() {
                     className="w-full"
                     isLoading={status === "loading"}
                   >
-                    Join The Over-Rev Report
+                    Subscribe
                     <ArrowRight size={16} className="ml-2" />
                   </Button>
                 </form>
@@ -129,9 +135,9 @@ export function ExitIntentModal() {
 
               <button
                 onClick={() => setIsOpen(false)}
-                className="mt-4 text-sm text-[#666] hover:text-[#A0A0A0] transition-colors"
+                className="mt-4 text-sm text-[#666] hover:text-[#999999] transition-colors"
               >
-                No thanks, I&apos;ll pass
+                No thanks
               </button>
             </div>
           </motion.div>

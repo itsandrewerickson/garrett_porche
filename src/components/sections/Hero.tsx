@@ -1,24 +1,19 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Clock, Shield, Zap } from "lucide-react";
+import { Target, DollarSign, Clock } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { Badge } from "@/components/ui/Badge";
 
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0F1115] via-[#0F1115] to-[#1A2040] opacity-80" />
+      {/* Background with subtle gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A] via-[#0F0F0F] to-[#0A0A0A]" />
 
-      {/* Subtle grid pattern */}
-      <div
-        className="absolute inset-0 opacity-5"
-        style={{
-          backgroundImage: `linear-gradient(#3461D2 1px, transparent 1px), linear-gradient(90deg, #3461D2 1px, transparent 1px)`,
-          backgroundSize: "60px 60px",
-        }}
-      />
+      {/* Decorative diagonal line - Porsche style */}
+      <div className="absolute top-0 right-0 w-1/2 h-full opacity-5">
+        <div className="absolute inset-0 bg-gradient-to-l from-[#D5001C] to-transparent transform -skew-x-12" />
+      </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -28,47 +23,47 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            {/* Trust badges */}
-            <div className="flex flex-wrap gap-2 mb-6">
-              <Badge variant="gold">Porsche Master Gold</Badge>
-              <Badge variant="default">BMW Master</Badge>
-              <Badge variant="default">ASE Certified</Badge>
-            </div>
+            {/* Red accent line */}
+            <div className="w-16 h-1 bg-[#D5001C] mb-8" />
 
-            <h1 className="font-mono text-4xl sm:text-5xl lg:text-6xl font-bold text-[#EAEAEA] leading-tight mb-6">
-              Expert Porsche
+            <h1
+              className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-[#F5F5F5] leading-[1.1] mb-6 tracking-tight"
+              style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+            >
+              EXPERT PORSCHE
               <br />
-              <span className="text-[#3461D2]">Diagnostics</span>
-              <br />
-              in 3 Hours
+              <span className="text-[#D5001C]">DIAGNOSTICS</span>
             </h1>
 
-            <p className="text-lg text-[#A0A0A0] mb-8 max-w-lg">
-              Skip the 3-week dealership wait. Get a guaranteed &quot;Guided
-              Next Steps&quot; report from a Level 3 Master Technician with 17
-              years of experience.
+            <p className="text-lg text-[#999999] mb-8 max-w-lg leading-relaxed">
+              Precision fault isolation for independent shops and DIY enthusiasts.
+              Founded by a Porsche Master-Certified technician with 20+ years
+              of experience. No guesswork. No unnecessary parts.
             </p>
 
-            {/* Value props */}
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 mb-8">
-              <div className="flex items-center gap-2 text-sm text-[#C0C0C0]">
-                <Clock size={18} className="text-[#3461D2]" />
-                <span>3-Hour Guarantee</span>
+            {/* Value props - Porsche style cards */}
+            <div className="grid sm:grid-cols-3 gap-4 mb-10">
+              <div className="bg-[#141414] border border-[#2A2A2A] p-4">
+                <Target size={20} className="text-[#D5001C] mb-2" />
+                <p className="text-sm font-medium text-[#F5F5F5]">Expert Access</p>
+                <p className="text-xs text-[#666]">Direct specialist communication</p>
               </div>
-              <div className="flex items-center gap-2 text-sm text-[#C0C0C0]">
-                <Shield size={18} className="text-[#3461D2]" />
-                <span>17 Years Experience</span>
+              <div className="bg-[#141414] border border-[#2A2A2A] p-4">
+                <DollarSign size={20} className="text-[#D5001C] mb-2" />
+                <p className="text-sm font-medium text-[#F5F5F5]">Cost Savings</p>
+                <p className="text-xs text-[#666]">Accurate first-time diagnosis</p>
               </div>
-              <div className="flex items-center gap-2 text-sm text-[#C0C0C0]">
-                <Zap size={18} className="text-[#3461D2]" />
-                <span>Remote & Immediate</span>
+              <div className="bg-[#141414] border border-[#2A2A2A] p-4">
+                <Clock size={20} className="text-[#D5001C] mb-2" />
+                <p className="text-sm font-medium text-[#F5F5F5]">Less Downtime</p>
+                <p className="text-xs text-[#666]">Faster fault resolution</p>
               </div>
             </div>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="primary" size="lg" href="/book">
-                Get Your Diagnosis
+                Schedule Diagnostic
               </Button>
               <Button variant="secondary" size="lg" href="#services">
                 View Services
@@ -76,63 +71,61 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* Right Content - SLA Calculator Card */}
+          {/* Right Content - Stats Card */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >
-            <div className="bg-[#1A1A1E] border border-[#2A2A2E] rounded-lg p-8 shadow-2xl">
-              <div className="absolute -top-3 left-6">
-                <Badge variant="accent">Live Availability</Badge>
+            <div className="bg-[#141414] border border-[#2A2A2A] p-8">
+              {/* Red corner accent */}
+              <div className="absolute top-0 right-0 w-20 h-20 overflow-hidden">
+                <div className="absolute top-0 right-0 w-28 h-1 bg-[#D5001C] transform rotate-45 translate-x-8 -translate-y-4" />
               </div>
 
-              <div className="mt-4">
-                <p className="text-sm text-[#666] font-mono uppercase tracking-wider mb-2">
-                  Current Response Time
-                </p>
-                <p className="text-3xl font-mono font-bold text-[#34D275] mb-4">
-                  &lt; 3 Hours
-                </p>
+              <p
+                className="text-xs text-[#666] tracking-[0.2em] uppercase mb-4"
+                style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+              >
+                Why Griffin Diagnostics
+              </p>
 
-                <div className="border-t border-[#2A2A2E] pt-4 mt-4">
-                  <p className="text-sm text-[#A0A0A0] mb-4">
-                    Submit your diagnostic request now and receive expert
-                    analysis by{" "}
-                    <span className="text-[#EAEAEA] font-semibold">
-                      end of business today
-                    </span>
+              <div className="space-y-6">
+                <div className="border-b border-[#2A2A2A] pb-6">
+                  <p className="text-3xl font-semibold text-[#F5F5F5] mb-1" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+                    20+ Years
                   </p>
+                  <p className="text-sm text-[#999999]">
+                    Porsche Master-Certified Experience
+                  </p>
+                </div>
 
-                  <div className="bg-[#0F1115] rounded p-4 mb-4">
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-[#666]">Business Hours (PST)</span>
-                      <span className="font-mono text-[#EAEAEA]">
-                        8:00 AM - 4:00 PM
-                      </span>
-                    </div>
-                  </div>
+                <div className="border-b border-[#2A2A2A] pb-6">
+                  <p className="text-3xl font-semibold text-[#F5F5F5] mb-1" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+                    Remote & In-Person
+                  </p>
+                  <p className="text-sm text-[#999999]">
+                    Flexible diagnostic sessions for shops & individuals
+                  </p>
+                </div>
 
-                  <Button variant="primary" className="w-full" href="/book">
-                    Start Diagnostic Request
-                  </Button>
+                <div>
+                  <p className="text-3xl font-semibold text-[#F5F5F5] mb-1" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+                    No Guesswork
+                  </p>
+                  <p className="text-sm text-[#999999]">
+                    Data-driven recommendations, methodical problem-solving
+                  </p>
                 </div>
               </div>
-            </div>
 
-            {/* Floating stats - hidden on mobile to prevent overflow */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              className="hidden sm:block absolute -bottom-6 -left-6 bg-[#0F1115] border border-[#2A2A2E] rounded-lg p-4 shadow-xl"
-            >
-              <p className="text-2xl font-mono font-bold text-[#EAEAEA]">
-                500+
-              </p>
-              <p className="text-xs text-[#666]">Diagnostics Completed</p>
-            </motion.div>
+              <div className="mt-8 pt-6 border-t border-[#2A2A2A]">
+                <Button variant="primary" className="w-full" href="/book">
+                  Start Your Diagnostic
+                </Button>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>
