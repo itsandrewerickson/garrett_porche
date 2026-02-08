@@ -121,12 +121,12 @@ export function Hero() {
               </div>
             </div>
 
-            {/* Floating stats */}
+            {/* Floating stats - hidden on mobile to prevent overflow */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="absolute -bottom-6 -left-6 bg-[#0F1115] border border-[#2A2A2E] rounded-lg p-4 shadow-xl"
+              className="hidden sm:block absolute -bottom-6 -left-6 bg-[#0F1115] border border-[#2A2A2E] rounded-lg p-4 shadow-xl"
             >
               <p className="text-2xl font-mono font-bold text-[#EAEAEA]">
                 500+

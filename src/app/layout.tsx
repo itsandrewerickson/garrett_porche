@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -13,6 +13,13 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#0F1115",
+};
 
 export const metadata: Metadata = {
   title: "Garrett Porsche Diagnostics | Master Technician Remote Consulting",
@@ -33,6 +40,11 @@ export const metadata: Metadata = {
     description:
       "Expert Porsche diagnostics from a Level 3 Master Technician. Guaranteed diagnosis within 3 business hours.",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Garrett Porsche Diagnostics",
+    description: "Expert Porsche diagnostics from a Level 3 Master Technician.",
   },
 };
 

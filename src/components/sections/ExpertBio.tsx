@@ -64,16 +64,16 @@ export function ExpertBio() {
               <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#0A0A0D] to-transparent" />
             </div>
 
-            {/* Experience badge */}
+            {/* Experience badge - repositioned on mobile */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="absolute -bottom-6 -right-6 bg-[#3461D2] rounded-lg p-6 shadow-xl"
+              className="absolute -bottom-4 right-4 sm:-bottom-6 sm:-right-6 bg-[#3461D2] rounded-lg p-4 sm:p-6 shadow-xl"
             >
-              <p className="text-4xl font-mono font-bold text-white">17</p>
-              <p className="text-sm text-white/80">Years Experience</p>
+              <p className="text-3xl sm:text-4xl font-mono font-bold text-white">17</p>
+              <p className="text-xs sm:text-sm text-white/80">Years Experience</p>
             </motion.div>
           </motion.div>
 
