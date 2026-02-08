@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Award, Wrench, Search, MessageSquare } from "lucide-react";
+import { Wrench, Search, MessageSquare } from "lucide-react";
+import Image from "next/image";
 
 const expertise = [
   {
@@ -36,18 +37,16 @@ export function ExpertBio() {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="aspect-[4/5] bg-[#1C1C1C] relative overflow-hidden">
-              {/* Placeholder for actual photo */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-24 h-24 mx-auto mb-4 bg-[#D5001C]/10 flex items-center justify-center border border-[#D5001C]/30">
-                    <Award size={40} className="text-[#D5001C]" />
-                  </div>
-                  <p className="text-[#666] text-sm tracking-wider uppercase">
-                    Master Certified
-                  </p>
-                </div>
-              </div>
+            <div className="aspect-[4/5] relative overflow-hidden">
+              <Image
+                src="/images/garrett1.jpg"
+                alt="Griffin Diagnostics founder - Porsche Master Certified Technician"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              {/* Subtle overlay for text readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#141414] via-transparent to-transparent opacity-40" />
 
               {/* Red corner accent */}
               <div className="absolute bottom-0 left-0 w-32 h-1 bg-[#D5001C]" />

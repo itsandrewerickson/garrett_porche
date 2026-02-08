@@ -1,15 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Search, Video, Users, ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import Image from "next/image";
 
 const services = [
   {
     id: "remote",
-    icon: Search,
+    image: "/images/stock-diyer.png",
     title: "Remote Diagnostic",
-    subtitle: "Fault Isolation",
+    subtitle: "DIY & Enthusiasts",
     price: "From $150",
     description:
       "Submit your symptoms, fault codes, and data logs. Receive expert analysis with precise fault isolation and repair recommendations.",
@@ -24,7 +25,7 @@ const services = [
   },
   {
     id: "consultation",
-    icon: Video,
+    image: "/images/hero1.jpg",
     title: "Live Consultation",
     subtitle: "Real-Time Support",
     price: "From $200",
@@ -41,7 +42,7 @@ const services = [
   },
   {
     id: "shop",
-    icon: Users,
+    image: "/images/stock-mechanic-shop.png",
     title: "Shop Support",
     subtitle: "Independent Shops",
     price: "Custom",
@@ -91,65 +92,66 @@ export function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className={`relative bg-[#141414] border p-8 ${
+              className={`relative bg-[#141414] border overflow-hidden ${
                 service.popular
                   ? "border-[#D5001C]"
                   : "border-[#2A2A2A]"
               }`}
             >
               {service.popular && (
-                <div className="absolute -top-px left-0 right-0 h-1 bg-[#D5001C]" />
+                <div className="absolute top-0 left-0 right-0 h-1 bg-[#D5001C] z-10" />
               )}
 
-              <div className="flex items-center gap-4 mb-6">
-                <div
-                  className={`w-12 h-12 flex items-center justify-center ${
-                    service.popular
-                      ? "bg-[#D5001C]"
-                      : "bg-[#1C1C1C]"
-                  }`}
-                >
-                  <service.icon
-                    size={24}
-                    className={service.popular ? "text-white" : "text-[#999999]"}
-                  />
+              {/* Service Image */}
+              <div className="relative h-48 overflow-hidden">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#141414] via-[#141414]/50 to-transparent" />
+
+                {/* Price badge */}
+                <div className="absolute bottom-4 left-4">
+                  <span className="text-2xl font-semibold text-[#F5F5F5]" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+                    {service.price}
+                  </span>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-[#F5F5F5]">
+              </div>
+
+              <div className="p-6">
+                <div className="mb-4">
+                  <h3 className="font-semibold text-[#F5F5F5] text-lg">
                     {service.title}
                   </h3>
                   <p className="text-xs text-[#666] uppercase tracking-wider">{service.subtitle}</p>
                 </div>
+
+                <p className="text-[#999999] text-sm mb-6 leading-relaxed">{service.description}</p>
+
+                <ul className="space-y-3 mb-6">
+                  {service.features.map((feature) => (
+                    <li key={feature} className="flex items-center gap-3 text-sm">
+                      <Check size={14} className="text-[#D5001C] flex-shrink-0" />
+                      <span className="text-[#C0C0C0]">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Button
+                  variant={service.popular ? "primary" : "secondary"}
+                  className="w-full group"
+                  href={`/book?service=${service.id}`}
+                >
+                  {service.cta}
+                  <ArrowRight
+                    size={16}
+                    className="ml-2 group-hover:translate-x-1 transition-transform"
+                  />
+                </Button>
               </div>
-
-              <div className="mb-6">
-                <span className="text-2xl font-semibold text-[#F5F5F5]" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
-                  {service.price}
-                </span>
-              </div>
-
-              <p className="text-[#999999] text-sm mb-6 leading-relaxed">{service.description}</p>
-
-              <ul className="space-y-3 mb-8">
-                {service.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-3 text-sm">
-                    <Check size={14} className="text-[#D5001C] flex-shrink-0" />
-                    <span className="text-[#C0C0C0]">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <Button
-                variant={service.popular ? "primary" : "secondary"}
-                className="w-full group"
-                href={`/book?service=${service.id}`}
-              >
-                {service.cta}
-                <ArrowRight
-                  size={16}
-                  className="ml-2 group-hover:translate-x-1 transition-transform"
-                />
-              </Button>
             </motion.div>
           ))}
         </div>

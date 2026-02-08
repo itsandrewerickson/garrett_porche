@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Target, DollarSign, Clock } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import Image from "next/image";
 
 export function Hero() {
   return (
@@ -16,7 +17,7 @@ export function Hero() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -71,60 +72,45 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* Right Content - Stats Card */}
+          {/* Right Content - Hero Image */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >
-            <div className="bg-[#141414] border border-[#2A2A2A] p-8">
+            <div className="relative aspect-[4/3] lg:aspect-[3/4]">
+              {/* Main image */}
+              <div className="relative w-full h-full overflow-hidden">
+                <Image
+                  src="/images/hero2.jpg"
+                  alt="Griffin Diagnostics - Expert Porsche diagnostic services"
+                  fill
+                  className="object-cover"
+                  priority
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-60" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A] via-transparent to-transparent opacity-40 lg:opacity-60" />
+              </div>
+
               {/* Red corner accent */}
-              <div className="absolute top-0 right-0 w-20 h-20 overflow-hidden">
-                <div className="absolute top-0 right-0 w-28 h-1 bg-[#D5001C] transform rotate-45 translate-x-8 -translate-y-4" />
-              </div>
+              <div className="absolute bottom-0 left-0 w-24 h-1 bg-[#D5001C]" />
+              <div className="absolute bottom-0 left-0 w-1 h-24 bg-[#D5001C]" />
 
-              <p
-                className="text-xs text-[#666] tracking-[0.2em] uppercase mb-4"
-                style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
+              {/* Stats overlay */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+                className="absolute bottom-6 right-6 bg-[#0A0A0A]/90 backdrop-blur-sm border border-[#2A2A2A] p-4"
               >
-                Why Griffin Diagnostics
-              </p>
-
-              <div className="space-y-6">
-                <div className="border-b border-[#2A2A2A] pb-6">
-                  <p className="text-3xl font-semibold text-[#F5F5F5] mb-1" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
-                    20+ Years
-                  </p>
-                  <p className="text-sm text-[#999999]">
-                    Porsche Master-Certified Experience
-                  </p>
-                </div>
-
-                <div className="border-b border-[#2A2A2A] pb-6">
-                  <p className="text-3xl font-semibold text-[#F5F5F5] mb-1" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
-                    Remote & In-Person
-                  </p>
-                  <p className="text-sm text-[#999999]">
-                    Flexible diagnostic sessions for shops & individuals
-                  </p>
-                </div>
-
-                <div>
-                  <p className="text-3xl font-semibold text-[#F5F5F5] mb-1" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
-                    No Guesswork
-                  </p>
-                  <p className="text-sm text-[#999999]">
-                    Data-driven recommendations, methodical problem-solving
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-8 pt-6 border-t border-[#2A2A2A]">
-                <Button variant="primary" className="w-full" href="/book">
-                  Start Your Diagnostic
-                </Button>
-              </div>
+                <p className="text-2xl font-semibold text-[#F5F5F5]" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+                  20+ Years
+                </p>
+                <p className="text-xs text-[#999999] uppercase tracking-wider">Master Certified</p>
+              </motion.div>
             </div>
           </motion.div>
         </div>
