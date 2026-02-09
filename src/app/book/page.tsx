@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Shield, Clock, Award } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Book a Diagnostic | Garrett Porsche Diagnostics",
+  title: "Book a Diagnostic | Griffin Diagnostics",
   description:
     "Book your expert Porsche diagnostic session. Get a guaranteed diagnosis within 3 business hours from a Level 3 Master Technician.",
 };
